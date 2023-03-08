@@ -1,0 +1,15 @@
+<%= link_to "Back to restaurants", restaurants_path, class: "btn btn-primary" %>
+
+<p><%= notice %></p>
+<h1>Welcome to, <%= @restaurant.name.capitalize %></h1>
+
+<p><strong>Located in:</strong> <%= @restaurant.address.capitalize %></p>
+<p><strong>Contact:</strong> <%= @restaurant.phone_number %></p>
+<p><strong>category:</strong> <%= @restaurant.category.capitalize %></p>
+<p><strong>What are people saying about: <%= @restaurant.name.capitalize %></strong></p>
+<% @restaurant.reviews.each do |review| %>
+  <p><strong>This customer said: </strong><%= review.content %>
+  <p><strong>Rating:</strong> <%= review.rating %></p>
+  <% end %>
+
+<%= link_to "Rate Your Experience", new_restaurant_review_path(@restaurant), class: "btn btn-primary"%>

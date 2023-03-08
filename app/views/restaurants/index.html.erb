@@ -1,0 +1,10 @@
+<%= link_to "Create A New Restaurant", new_restaurant_path, class: "btn btn-primary"%>
+
+
+<h1>List Of All Restaurants</h1>
+
+<% @restaurants.each do |restaurant| %>
+<h3> Name: <%= restaurant.name.capitalize %></h3>
+
+<%= link_to 'View The restaurant', restaurant %>
+<% end %>
